@@ -13,11 +13,11 @@
 	<script>
 	$(function() {
 		$.get('test.csv', function(data) {
-			$('#CSVSource').html('<pre>' + data + '</pre>');
+			$('#CSVSource').text(data);
 		});
 		$('#CSVTable').CSVToTable('test.csv', { loadingImage: 'images/loading.gif', startLine: 0 });
 		$.get('test.tsv', function(data) {
-			$('#TSVSource').html('<pre>' + data + '</pre>');
+			$('#TSVSource').text(data);
 		});
 		$('#TSVTable').CSVToTable('test.tsv', { loadingText: 'Loading TSV Data...', loadingImage: 'images/loading.gif', startLine: 0, separator: "\t" });
 		$('#CSVTable2').CSVToTable('test.csv', { loadingImage: 'images/loading.gif', startLine: 1, headers: ['Album Title', 'Artist Name', 'Price ($USD)'] }).bind("loadComplete",function() { 
@@ -31,8 +31,8 @@
 This is a test of the CSVToTable plugin.
 <br><br>
 Original CSV (comma separated values) source of <a href="test.csv">test.csv</a>:<br>
-<div id="CSVSource" class="source">
-</div>
+<pre id="CSVSource" class="source">
+</pre>
 
 <br><br>
 CSV To Table:<br>
@@ -42,8 +42,8 @@ CSV To Table:<br>
 
 <br><br>
 Original TSV (tab separated values) source of <a href="test.tsv">test.tsv</a>:<br>
-<div id="TSVSource" class="source">
-</div>
+<pre id="TSVSource" class="source">
+</pre>
 
 <br><br>
 TSV To Table:<br>
